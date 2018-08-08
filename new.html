@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.content{
+	width:100%;
+}
+.left{
+	width:20%;
+	height:100px;
+	float:left;
+}
+.middle{
+	width:60%;
+	float:left;
+}
+.right{
+	width:20%;
+	height:100px;
+	float:left;
+}
+h1{
+	text-align:center;
+}
+.mid{
+	width:100%;
+	position: relative;
+  	margin: auto;
+	text-align:center;
+
+}
+.bo{
+	position:relative;
+	top:30px;
+}
+.new{
+	position:relative;
+	margin:auto;
+	text-align:center;
+	top:80px;
+}
+.button {
+    background-color:#e0ebe8 ;
+    border: none;
+    color: green;
+    padding: 15px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:2px solid #90C695;
+}
+.button:hover {
+    background-color:rgb(200, 247, 197);
+    border: none;
+    color: green;
+    padding: 15px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border:2px solid #90C695;
+}
+	</style>
+	</head>
+	<body>
+<div class="slideshow-container">
+
+  
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="auro3.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="auro2.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img3.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div class="content">
+	<h1>These are some of my Logos..</h1>
+	<div class="left"></div>
+	<div class="middle">
+		<div class="mid">
+		<img src="6.jpg" hspace="80" style="width:200px;">
+		<img src="11.jpg" hspace="80" style="width:200px;">
+		<img src="21.jpg" hspace="80" style="width:200px;">
+		<div class="bo">
+		<img src="17.jpg" hspace="80" style="width:200px;">
+		<img src="18.jpg" hspace="80" style="width:200px;">
+		<img src="19.jpg" hspace="80" style="width:200px;">
+		</div>
+
+		</div>	
+		<div class="new">
+			<button type="submit" value="submit" class="button">Show all</button>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>
+
+
+</body>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</html>
